@@ -1,16 +1,33 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.github-logo {
+  max-width: 300px;
 }
 
-* {
-  box-sizing: border-box;
+.darker {
+  background-color: #1B1F23;
+}
+
+#footer {
+  background-color: #1B1F23;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem; 
+  overflow: hidden;  
+}
+
+@media only screen and (max-width: 425px) {
+  .github-logo {
+    max-width: 200px;
+  }
+}
+
+.avatar {
+  max-width: 1rem;
 }
