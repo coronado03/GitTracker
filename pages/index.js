@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import axios from 'axios'
-
+import { motion } from "framer-motion"
+import Footer from '/components/Footer.js'
 import Navigation from '/components/Navbar.js'
 
 export default function Home() {
@@ -31,21 +32,17 @@ export default function Home() {
           <Col> 
 
           <Link href={`/users/${username}`}>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}>                
             <button type="button" className="btn btn-lg btn-outline-dark fs-3">Search User</button>
+            </motion.div>
           </Link>
           
           </Col>
         </Row>
       </Container>
-
-      <Container fluid id="footer">
-        <Row className="mt-5 text-center">
-          <Col>
-            <p className="text-light align-middle">@COPYRIGHT CORONADO03</p> 
-          </Col>
-        </Row>
-      </Container>
-
+      <Footer/>
     </>
   )
 }

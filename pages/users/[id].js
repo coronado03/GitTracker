@@ -5,92 +5,51 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'
 import Navigation from '/components/Navbar.js'
 import { useRouter } from 'next/router'
+import { motion } from "framer-motion"
+import Charts from '/components/users/charts.js'
+import Footer from '/components/Footer.js'
+
 
 export default function Users() {
   const router = useRouter()
   const { id } = router.query
 
-  // const currentPageUrl = (`https://api.github.com/users/${id}`)
-  // const [loading, setLoading] = useState(true)
-  // const [response, setResponse] = useState([]) 
-
-
-
-  // useEffect(() => {
-  //   if(!router.isReady) return;
-  //   setLoading(true);
-
-  //   console.log(currentPageUrl);
-  //   axios.get(currentPageUrl)
-  //   .then(res => {
-  //   setLoading(false);
-  //   setResponse(res)})
-  //   .catch(function (error) {
-  //     console.log(error.toJSON());
-  //   });
-  // }, [router.isReady])
-
-
-  //   // const userUrl = (response.data.url)
-  //   // const userAvatar = (response.data.avatar_url)
-  //   // const userCreated= (response.data.created_at)
-  //   // const userBio = (response.data.bio)
-  //   // const userName = (response.data.name)
-  //   // const userCompany = (response.data.company)
-  //   // const userRepos = (response.data.public_repos)
-  //   // const userReposUrl = (response.data.repos_url)
-  //   // const userFollowers = (response.data.followers)
-  //   // const userFollowing = (response.data.following)
-
-
-  // if (loading) return (
-  //   <div className="loader text-center">
-  //     <div className="spinner-border" role="status">
-  //       <span className="visually-hidden">Loading...</span>
-  //     </div>
-  //   </div>
-  // )
-
   return (
     <>
       <Navigation />
 
-      <Container>
-        <Row className="border-bottom-1">
-          <Col md={1}> 
-            <img classname="avatar" src="https://cdn2.bulbagarden.net/upload/thumb/b/b1/151Mew.png/250px-151Mew.png"/>
+      <Container className="p-3"> 
+      <Row className="text-center">
+          <Col md={6}> 
+          <div class="card text-white h-100 bg-dark pt-3 mb-3">
+            <img class="mt-3 rounded-circle bg-light user-img card-img-top mx-auto d-block" src="https://cdn2.bulbagarden.net/upload/thumb/b/b1/151Mew.png/250px-151Mew.png" alt="Card image" />
+            <div class="card-body mt-3">
+              <h2 class="card-title my-2">Hello guys!</h2>
+              <h5 class="card-text mt-3 text-secondary"> 
+                <Typewritter 
+                  onInit={(typewriter) => {
+                    typewriter
+                    .typeString('A full stack web dev!')
+                    .start();
+                  }}
+                  /></h5>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}>
+                    <a className="btn btn-light btn-lg mt-3">See Profile</a>
+                </motion.div>
+            </div>
+          </div>
           </Col>
 
-          <Col>
-            <h1>
-              <Typewritter 
-                onInit={(typewriter) => {
-                  typewriter
-                  .typeString("Hello guys!")
-                  .pauseFor(1500)
-                  .deleteAll()
-                  .typeString('A full stack web dev!')
-                  .deleteAll()
-                  .typeString("Hello guys!")
-                  .pauseFor(1500)
-                  .start();
-                }}
-                />
-              </h1>
-            </Col>
-          </Row>
-      
-        
-      </Container>
-
-      <Container fluid id="footer">
-        <Row className="mt-5 text-center">
-          <Col>
-            <p className="text-light align-middle">@COPYRIGHT CORONADO03</p> 
+          <Col md={6}>
+          <Charts />
           </Col>
-        </Row>
-      </Container>
 
+            
+        </Row>            
+      </Container>
+      <Footer />
     </>
   )
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { motion } from "framer-motion"
 
 
 export default function Navigation() {
@@ -21,11 +22,15 @@ export default function Navigation() {
             <Navbar className="color-nav" bg="dark" variant="dark" expand="lg">
 
             <Link href="/" passHref>
-                <Navbar.Brand>GitTracker</Navbar.Brand>
+            <motion.div
+                  whileHover={{ scale: 1.001 }}
+                  whileTap={{ scale: 0.9 }}>
+                    <Navbar.Brand>GitTracker</Navbar.Brand>
+                </motion.div> 
             </Link> 
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
-                <Nav className="mr-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+                <Nav className="my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
 
                 <Link href="/rankings" passHref>
                     <Nav.Link> Rankings </Nav.Link>
