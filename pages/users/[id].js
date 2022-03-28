@@ -21,11 +21,11 @@ export default function Users() {
       <Container className="p-3"> 
       <Row className="text-center">
           <Col md={6}> 
-          <div class="card text-white h-100 bg-dark pt-3 mb-3">
-            <img class="mt-3 rounded-circle bg-light user-img card-img-top mx-auto d-block" src="https://cdn2.bulbagarden.net/upload/thumb/b/b1/151Mew.png/250px-151Mew.png" alt="Card image" />
-            <div class="card-body mt-3">
-              <h2 class="card-title my-2">Hello guys!</h2>
-              <h5 class="card-text mt-3 text-secondary"> 
+          <div className="card text-white h-100 bg-dark pt-3 mb-3">
+            <img className="mt-3 rounded-circle bg-light user-img card-img-top mx-auto d-block" src="https://cdn2.bulbagarden.net/upload/thumb/b/b1/151Mew.png/250px-151Mew.png" alt="Card image" />
+            <div className="card-body mt-3">
+              <h2 className="card-title my-2">Hello guys!</h2>
+              <h5 className="card-text mt-3 text-secondary"> 
                 <Typewritter 
                   onInit={(typewriter) => {
                     typewriter

@@ -7,10 +7,10 @@ export default function Footer() {
 
     return (
         <>
-            <footer class="page-footer bg-dark text-light">
+            <footer className="page-footer bg-dark text-light">
                                 
-            <div class="footer-copyright text-center py-3">© 2021 Copyright:
-                <Link href="/" passHref>
+            <div className="footer-copyright text-center py-3">© 2022 Copyright:
+                <Link href="https://github.com/coronado03" passHref>
                 <a href="https://github.com/coronado03"> Coronado03</a>
                 </Link>
             </div>
